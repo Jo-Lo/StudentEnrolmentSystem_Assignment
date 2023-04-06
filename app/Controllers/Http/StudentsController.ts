@@ -4,7 +4,7 @@ import Student from 'App/Models/Student'
 import StudentValidator from 'App/Validators/StudentValidator'
 
 export default class StudentsController {
-  //returns all students
+  
   public async index({}: HttpContextContract) {
     const students = await Student.all()
     return students
@@ -70,7 +70,7 @@ export default class StudentsController {
     }
     await student.delete()
     return response.ok({
-      message: `Student ${id + `: ` + student.StudentID + `, ` + student.GivenName} was deleted successfully.`
+      message: `Student record ${id + `: StudentID: ` + student.StudentID + `, Student FirstName: ` + student.GivenName} was deleted successfully.`
     })
   }
 }
