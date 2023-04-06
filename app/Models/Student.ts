@@ -3,15 +3,18 @@ import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
 
 export default class Student extends BaseModel {
   @column({ isPrimary: true })
-  public StudentID: number
+  public id: number
 
-  @column()
+  @column({columnName: 'StudentID'})
+  public StudentID: string
+
+  @column({columnName: 'GivenName'})
   public GivenName: string
 
-  @column()
+  @column({columnName: 'LastName'})
   public LastName: string
 
-  @column()
+  @column({columnName: 'EmailAddress'})
   public EmailAddress: string
 
   @column.dateTime({ autoCreate: true })

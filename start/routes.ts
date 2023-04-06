@@ -25,7 +25,14 @@ Route.get('/', async () => {
 })
 */
 
+/*
 Route.get('/', async () => {
   return { assignment: 'server is running' }
-})
+})*/
 
+/*
+Route.get('/', 'StudentsController.index')
+*/
+Route.group(() => {
+  Route.resource('Students', 'StudentsController').apiOnly()
+}).prefix('/api/v1')
